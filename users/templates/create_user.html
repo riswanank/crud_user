@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+
+{% block title %}
+ Users - List of all users
+ {% endblock %}
+
+    
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+  <style>
+    .text{
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+  
+  {% block content %}
+
+<div class="container mt-5">
+    
+<h1 class="text  text-center" style="color: green;">Create User</h1>
+<div class="form-group">
+    <form method="post" class="col-6 mx-auto card p-3 shadow-lg" >
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save" class="btn btn-success">
+    </form>
+</div>
+</div>
+{% endblock %}

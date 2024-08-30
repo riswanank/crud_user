@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    
+ 
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+ 
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+ 
+        th {
+            background-color: #f2f2f2;
+        }
+ 
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+ 
+        tr:hover {
+            background-color: #ddd;
+        }
+        td>ul
+        {
+            background-color: #f2f2f2
+        }
+        td>ul>li a:hover{
+
+            background-color: none;
+        }
+    </style>
+    <style>
+
+      .nav {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #02511f;
+        }
+        
+        li {
+          float: left;
+        }
+        
+      .nav>  li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+         background-color:#ddd;
+        }
+        </style>
+</head>
+ 
+<body>
+    <nav class="nave">
+  
+        <ul class="nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href={% url 'users:user_create' %}>Create</a></li>
+          <li><a href={% url 'users:user_list' %}>Retrieve</a></li>
+          <li><a href={% url 'users:user_list' %}>Update</a></li>
+          <li><a href={% url 'users:user_list' %}>Delete</a></li>
+        </ul>
+     
+    </nav>
+{% block content %}
+{% endblock %}
+<script>
+    
+</script>
+</body>
+</html>
